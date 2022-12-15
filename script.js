@@ -5,11 +5,11 @@ const renderCalendar = () => {
 
   const monthDays = document.querySelector(".days");
 
-  const lastDay = new Date(
-    date.getFullYear(),
-    date.getMonth() + 1,
-    0
-  ).getDate();
+  // const lastDay = new Date(
+  //   date.getFullYear(),
+  //   date.getMonth() + 1,
+  //   0
+  // ).getDate();
 
   const prevLastDay = new Date(
     date.getFullYear(),
@@ -42,9 +42,9 @@ const renderCalendar = () => {
     "December",
   ];
 
-  document.querySelector(".date h1").innerHTML = months[date.getMonth()];
+  document.querySelector(".date h1").innerHTML = months[date.getMonth()]; //to get current month
 
-  document.querySelector(".date p").innerHTML = new Date().toDateString();
+  document.querySelector(".date p").innerHTML = new Date().toDateString(); //to get current date
 
   let days = "";
 
@@ -71,11 +71,11 @@ const renderCalendar = () => {
 
 document.querySelector(".prev").addEventListener("click", () => {
   date.setMonth(date.getMonth() - 1);
-  renderCalendar();
+  renderCalendar(); //to goto next month
 });
 
 document.querySelector(".next").addEventListener("click", () => {
-  date.setMonth(date.getMonth() + 1);
+  date.setMonth(date.getMonth() + 1); //to go to previous month
   renderCalendar();
 });
 
